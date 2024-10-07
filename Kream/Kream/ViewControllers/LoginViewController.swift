@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
         self.view = loginView
     }
     
-    //login controller
+    //login view
     private lazy var loginView: LoginView = {
         let loginView = LoginView()
         
@@ -24,5 +24,11 @@ class LoginViewController: UIViewController {
     @objc private func loginBtnTapped() {
         let loginUser = LoginUser(email: "qwer@naver.com", password: "1234")
         print("loginUserData : \(loginUser)")
+        //버튼을 누를면 TabBarController로  전환 : Modal
+        let tabController = TabBarController()
+        print("로그인 버튼 눌림")
+        tabController.modalPresentationStyle = .fullScreen
+        present(tabController, animated: true)
+        
     }
 }

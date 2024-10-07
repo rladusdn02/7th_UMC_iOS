@@ -11,3 +11,6 @@ struct LoginUser {
     let email: String
     let password: String
 }
+var users: [LoginUser] = [
+    LoginUser(email: "admin@kream.com", password: "admin")
+]
