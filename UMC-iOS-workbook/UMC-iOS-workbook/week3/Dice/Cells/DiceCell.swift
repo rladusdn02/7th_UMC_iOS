@@ -10,6 +10,7 @@ import SnapKit
 
 class DiceCell: UITableViewCell {
     
+    //cell 식별자 넣기
     static let identifier = "DiceCell"
 
     override func awakeFromNib() {
@@ -23,12 +24,14 @@ class DiceCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //TableViewCell 초기화
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        // 셀 초기화 할 때 호출되는 메서드
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setViews()
         self.setConstaints()
     }
-    
+    // 셀이 재사용되기 전에 초기화된 상태로 만들어줌
     override func prepareForReuse() {
         super.prepareForReuse()
         self.diceImageView.image = nil
