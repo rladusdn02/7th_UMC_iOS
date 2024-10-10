@@ -19,7 +19,6 @@ class MyViewController: UIViewController {
         let myView = MyView()
         myView.profileEditBtn.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
         print("버튼누르기 전")
-        print(myView.profileEditBtn.frame)
         return myView
     }()
     

@@ -22,19 +22,19 @@ class MyView: UIView {
     private func addComponents() {
         self.addSubview(topFrame)
         topFrame.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(45)
+            $0.top.equalToSuperview().offset(75)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(393)
             $0.height.equalTo(297)
         }
     }
-    //상단 백그라운드 프레임
+    // MARK: - 상단 백그라운드 프레임
     private lazy var topFrame: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.addSubview(topComponentGroup)
         topComponentGroup.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(30)
+            $0.top.equalToSuperview().offset(0)
             $0.width.equalTo(328)
             $0.height.equalTo(193)
             $0.centerX.equalToSuperview()
@@ -42,7 +42,7 @@ class MyView: UIView {
         return view
     }()
     
-    //상단 컴포넌트 그룹
+    // MARK: - 상단 컴포넌트 그룹
     private lazy var topComponentGroup: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -71,13 +71,14 @@ class MyView: UIView {
         return view
     }()
     
-    //상단 버튼 모음
+    // MARK: - 상단 버튼 모음
     private lazy var topButtonGroup: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         //설정 버튼
         let setBtn = UIButton()
         setBtn.setTitle("", for: .normal)
+        // TODO: - myPage 상단 버튼 구현
 //        setBtn.addTarget(, action: , for: ) -> 추후 구현
         setBtn.setBackgroundImage(UIImage(named: "setting_btn"), for: .normal)
         view.addSubview(setBtn)
@@ -101,7 +102,7 @@ class MyView: UIView {
         }
         return view
     }()
-    //프로필 프레임
+    // MARK: - 프로필 프레임
     private lazy var profileFrame: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -128,7 +129,7 @@ class MyView: UIView {
         return imgview
     }()
     
-    // 계정 정보 부분
+    // MARK: - 계정 정보 부분
     private lazy var accountInfo: UIView = {
         let view = UIView()
 
@@ -174,7 +175,7 @@ class MyView: UIView {
         return view
     }()
     
-    //프로필 버튼 모음
+    // MARK: - 프로필 버튼 모음
     public lazy var profileButtonGroup: UIView = {
         let view = UIView()
         view.backgroundColor = .white
