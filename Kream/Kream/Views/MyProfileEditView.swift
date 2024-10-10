@@ -116,7 +116,8 @@ class MyProfileEditView: UIView {
     }
     
     private func setupConstraints() {
-        viewLabel.snp.makeConstraints { $0.top.equalToSuperview().offset(66)
+        viewLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(20)
             $0.centerX.equalToSuperview()
         }
         profileImageView.snp.makeConstraints { $0.centerX.equalToSuperview()

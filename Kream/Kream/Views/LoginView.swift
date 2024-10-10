@@ -31,7 +31,7 @@ class LoginView: UIView {
         
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 114),
+            logoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 126),
             logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             emailView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 87),

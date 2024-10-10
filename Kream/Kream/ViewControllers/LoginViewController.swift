@@ -20,6 +20,13 @@ class LoginViewController: UIViewController {
         loginView.LoginButton.addTarget(self, action: #selector(loginBtnTapped), for: .touchUpInside)
         return loginView
     }()
+// safeArea확인 코드
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        
+//        let safeAreaInsets = view.safeAreaInsets
+//        print("Safe Area Insets - Top: \(safeAreaInsets.top), Bottom: \(safeAreaInsets.bottom), Left: \(safeAreaInsets.left), Right: \(safeAreaInsets.right)")
+//    }
     
     @objc private func loginBtnTapped() {
         let loginUser = LoginUser(email: "qwer@naver.com", password: "1234")
