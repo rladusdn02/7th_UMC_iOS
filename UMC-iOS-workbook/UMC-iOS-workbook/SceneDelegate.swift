@@ -14,14 +14,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-               window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-               window?.windowScene = windowScene
-        window?.rootViewController = DiceViewController() // 원하는 뷰 컨트롤러 파일의 이름을 작성하면 됩니다.
-               window?.makeKeyAndVisible()
+        
+        self.window = UIWindow(windowScene: windowScene)
+        self.window?.rootViewController = TeenipingViewController()
+        //FIXME: -  실행할 뷰 컨트롤러 파일의 이름을 작성
+        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
+        // Called as the scene is being=-3 released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
