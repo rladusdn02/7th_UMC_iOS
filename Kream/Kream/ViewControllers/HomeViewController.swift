@@ -2,20 +2,33 @@
 //  HomeViewController.swift
 //  Kream
 //
-//  Created by 김연우 on 10/2/24.
-//
 
 import UIKit
 
 class HomeViewController: UIViewController {
     private let rootView = HomeView()
+    
+    // 샘플 데이터
+    private let releaseProducts = [
+        Product(imageName: "mlb_shoe", title: "MLB", subtitle: "청키라이너 뉴욕양키스", price: "139,000원", transactionInfo: "즉시 구매가"),
+        Product(imageName: "jordan_shoe", title: "Jordan", subtitle: "Jordan 1 Retro High OG Yellow Ochre", price: "228,000원", transactionInfo: "즉시 구매가"),
+        Product(imageName: "humanMade", title: "Human Made", subtitle: "Human Made x Kaws Varsity Jacket #1 Black", price: "2,000,000원", transactionInfo: "즉시 구매가")
+    ]
+    
+    private let essentials = [
+        Essential(image: UIImage(named: "saved1"), username: "@katarinabluu"),
+        Essential(image: UIImage(named: "saved2"), username: "@imwinter"),
+        Essential(image: UIImage(named: "saved3"), username: "@thousand_wo")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view = rootView
         setupAction()
         setupDelegate()
     }
-    //MARK: - 위에 segment가 변할때마다 비춰질 view들
+    
+    // MARK: - Segmented Control Action
     private func setupAction() {
         rootView.segmentedControl.addTarget(
             self,
@@ -24,62 +37,107 @@ class HomeViewController: UIViewController {
         )
     }
     
-    //MARK: - setupDelegate
-    private func setupDelegate(){
+    // MARK: - Setup Delegate
+    private func setupDelegate() {
         rootView.menuCollectionView.dataSource = self
         rootView.menuCollectionView.delegate = self
+        rootView.releaseCollectionView.dataSource = self
+        rootView.releaseCollectionView.delegate = self
+        rootView.essentialsCollectionView.dataSource = self
+        rootView.essentialsCollectionView.delegate = self
     }
     
     @objc
-        private func segmentedControlValueChanged(segment: UISegmentedControl) {
-            ///추천탭눌렀을때
-            if segment.selectedSegmentIndex == 0 {
-                rootView.recommendImg.isHidden = false
-                rootView.menuCollectionView.isHidden = false
-                rootView.emptyLabel.isHidden = true
-            }
-            ///아닌경우
-            else {
-                rootView.recommendImg.isHidden = true
-                rootView.menuCollectionView.isHidden = true
-                rootView.emptyLabel.isHidden = false
-            }
+    private func segmentedControlValueChanged(segment: UISegmentedControl) {
+        if segment.selectedSegmentIndex == 0 {
+            rootView.recommendImg.isHidden = false
+            rootView.menuCollectionView.isHidden = false
+            rootView.emptyLabel.isHidden = true
+        } else {
+            rootView.recommendImg.isHidden = true
+            rootView.menuCollectionView.isHidden = true
+            rootView.emptyLabel.isHidden = false
         }
-}
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HomeMenuModel.dummy().count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: MenuCollectionViewCell.identifier,
-            for: indexPath
-        ) as? MenuCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        let list = HomeMenuModel.dummy()
-        
-        cell.imageView.image = list[indexPath.row].image
-        cell.titleLabel.text = list[indexPath.row].name
-        
-        return cell
     }
 }
 
+// MARK: - UICollectionViewDataSource
+
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == rootView.menuCollectionView {
+            return HomeMenuModel.dummy().count
+        } else if collectionView == rootView.releaseCollectionView {
+            return releaseProducts.count
+        } else if collectionView == rootView.essentialsCollectionView {
+            return essentials.count
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == rootView.menuCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: MenuCollectionViewCell.identifier,
+                for: indexPath
+            ) as? MenuCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            let list = HomeMenuModel.dummy()
+            cell.imageView.image = list[indexPath.row].image
+            cell.titleLabel.text = list[indexPath.row].name
+            return cell
+            
+        } else if collectionView == rootView.releaseCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ReleaseCollectionViewCell.identifier,
+                for: indexPath
+            ) as? ReleaseCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            cell.configure(with: releaseProducts[indexPath.item])
+            return cell
+            
+        } else if collectionView == rootView.essentialsCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: EssentialsCollectionViewCell.identifier,
+                for: indexPath
+            ) as? EssentialsCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            cell.configure(with: essentials[indexPath.item])
+            return cell
+        }
+        
+        return UICollectionViewCell()
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let totalSpacing = 4 * 9 // 5개의 아이템을 위한 4개의 간격
-        let itemWidth = (collectionView.frame.width - CGFloat(totalSpacing)) / 5 // 셀 너비 계산
-        return CGSize(width: itemWidth, height: itemWidth) // 정사각형 셀
+        if collectionView == rootView.menuCollectionView {
+            let totalSpacing = 4 * 9
+            let itemWidth = (collectionView.frame.width - CGFloat(totalSpacing)) / 5
+            return CGSize(width: itemWidth, height: itemWidth)
+            
+        } else if collectionView == rootView.releaseCollectionView {
+            return CGSize(width: 150, height: 200)
+            
+        } else if collectionView == rootView.essentialsCollectionView {
+            return CGSize(width: 100, height: 150)
+        }
+        
+        return CGSize(width: 100, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 9 // 아이템 간 간격
+        return 9
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20 // 행 간 간격
+        return 20
     }
 }

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "jordan_shoe.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
