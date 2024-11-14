@@ -16,9 +16,9 @@ class HomeViewController: UIViewController {
     ]
     
     private let essentials = [
-        Essential(image: UIImage(named: "saved1"), username: "@katarinabluu"),
-        Essential(image: UIImage(named: "saved2"), username: "@imwinter"),
-        Essential(image: UIImage(named: "saved3"), username: "@thousand_wo")
+        Essential(imageName: "katarina", username: "@katarinabluu"),
+        Essential(imageName: "imwinter", username: "@imwinter"),
+        Essential(imageName: "thousandwoo", username: "@thousand_woo")
     ]
     
     override func viewDidLoad() {

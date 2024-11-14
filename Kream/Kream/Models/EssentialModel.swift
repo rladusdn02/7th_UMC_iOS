@@ -11,5 +11,3 @@ struct Essential {
         return UIImage(named: imageName)
     }
 }
-
-
