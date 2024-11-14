@@ -7,7 +7,7 @@
 
 import Foundation
 
-// model - struct : 값 타입. 구조체의 인스턴스를 복사할 때 마다 별도의 복사본 생성. 복사된 인스턴스는 원본과 독립적
+/// model - struct : 값 타입. 구조체의 인스턴스를 복사할 때 마다 별도의 복사본 생성. 복사된 인스턴스는 원본과 독립적
 struct GoodsModel {
     let goodsImg: String
     let goodsName: String
@@ -27,7 +27,7 @@ final class dummySavedModel {
     ]
 }
 
-//// model - class : 참조 타입. 클래스의 인스턴스를 복사해도 동일한 인스턴스 참조
+/// model - class : 참조 타입. 클래스의 인스턴스를 복사해도 동일한 인스턴스 참조
 //// 글로벌한 상태를 유지해야하는 데이터를 참조 타입으로 관리함으로써 데이터 일관성과 효율적 메모리 관리 가능.
 //class GoodsCountModel {
 //    private let goodsDefaults = UserDefaults.standard

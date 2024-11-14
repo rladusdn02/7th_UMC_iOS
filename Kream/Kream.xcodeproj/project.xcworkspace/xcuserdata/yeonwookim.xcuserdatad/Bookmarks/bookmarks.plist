@@ -21,7 +21,7 @@
 							<key>StartingLineNumber</key>
 							<string>15</string>
 							<key>Timestamp</key>
-							<string>750253418.61182</string>
+							<string>753258820.29877</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -142,15 +142,96 @@
 					<key>type</key>
 					<string>bookmark</string>
 				</dict>
-			</array>
-			<key>title</key>
-			<string>TodayTodo</string>
-			<key>type</key>
-			<string>group</string>
-		</dict>
-		<dict>
-			<key>children</key>
-			<array>
+				<dict>
+					<key>destination</key>
+					<dict>
+						<key>location-parameters</key>
+						<dict>
+							<key>EndingColumnNumber</key>
+							<string>0</string>
+							<key>EndingLineNumber</key>
+							<string>18</string>
+							<key>StartingColumnNumber</key>
+							<string>0</string>
+							<key>StartingLineNumber</key>
+							<string>17</string>
+							<key>Timestamp</key>
+							<string>753258859.893437</string>
+						</dict>
+						<key>rebasable-url</key>
+						<dict>
+							<key>base</key>
+							<string>workspace</string>
+							<key>payload</key>
+							<dict>
+								<key>relative-path</key>
+								<string>Kream/Views/HomeView.swift</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>text-context</key>
+					<dict>
+						<key>focused</key>
+						<string>    //TODO: - 밑줄 제외 구현 완료
+</string>
+						<key>leading</key>
+						<string>    }()
+    //MARK: - segmentControl
+</string>
+						<key>trailing</key>
+						<string>    let titles = ["추천", "랭킹", "발매정보", "럭셔리", "남성", "여성"]
+    lazy var segmentedControl = UISegmentedControl(items: titles).then{
+        /// normal인 경우
+</string>
+					</dict>
+					<key>type</key>
+					<string>bookmark</string>
+				</dict>
+				<dict>
+					<key>destination</key>
+					<dict>
+						<key>location-parameters</key>
+						<dict>
+							<key>EndingColumnNumber</key>
+							<string>0</string>
+							<key>EndingLineNumber</key>
+							<string>9</string>
+							<key>StartingColumnNumber</key>
+							<string>0</string>
+							<key>StartingLineNumber</key>
+							<string>8</string>
+							<key>Timestamp</key>
+							<string>753258883.713589</string>
+						</dict>
+						<key>rebasable-url</key>
+						<dict>
+							<key>base</key>
+							<string>workspace</string>
+							<key>payload</key>
+							<dict>
+								<key>relative-path</key>
+								<string>Kream/Views/HomeView.swift</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>text-context</key>
+					<dict>
+						<key>focused</key>
+						<string>    //TODO: - 검색창 모양&amp;알림버튼 구현할것
+</string>
+						<key>leading</key>
+						<string>
+class HomeView: UIView {
+</string>
+						<key>trailing</key>
+						<string>    let searchBarView: UIView = {
+        let view = UIView()
+        view.isUserInteractionEnabled = true
+</string>
+					</dict>
+					<key>type</key>
+					<string>bookmark</string>
+				</dict>
 				<dict>
 					<key>destination</key>
 					<dict>
@@ -198,7 +279,7 @@
 				</dict>
 			</array>
 			<key>title</key>
-			<string>LaterTODO</string>
+			<string>TODO</string>
 			<key>type</key>
 			<string>group</string>
 		</dict>
@@ -294,7 +375,7 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>// model - struct : 값 타입. 구조체의 인스턴스를 복사할 때 마다 별도의 복사본 생성. 복사된 인스턴스는 원본과 독립적
+				<string>/// model - struct : 값 타입. 구조체의 인스턴스를 복사할 때 마다 별도의 복사본 생성. 복사된 인스턴스는 원본과 독립적
 </string>
 				<key>leading</key>
 				<string>import Foundation
@@ -323,7 +404,7 @@
 					<key>StartingLineNumber</key>
 					<string>29</string>
 					<key>Timestamp</key>
-					<string>750253389.651633</string>
+					<string>753258814.850691</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -339,7 +420,7 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>//// model - class : 참조 타입. 클래스의 인스턴스를 복사해도 동일한 인스턴스 참조
+				<string>/// model - class : 참조 타입. 클래스의 인스턴스를 복사해도 동일한 인스턴스 참조
 </string>
 				<key>leading</key>
 				<string>}

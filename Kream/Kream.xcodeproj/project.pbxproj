@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01321A262CE4BA8C00FA4A68 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 01321A252CE4BA8C00FA4A68 /* Then */; };
 		01660BCC2CAD119400BEDDC6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 01660BCB2CAD119400BEDDC6 /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01660BCC2CAD119400BEDDC6 /* SnapKit in Frameworks */,
+				01321A262CE4BA8C00FA4A68 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			name = Kream;
 			packageProductDependencies = (
 				01660BCB2CAD119400BEDDC6 /* SnapKit */,
+				01321A252CE4BA8C00FA4A68 /* Then */,
 			);
 			productName = Kream;
 			productReference = 019970372CA1721200FD2674 /* Kream.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				01660BCA2CAD119400BEDDC6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				01321A242CE4BA8C00FA4A68 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 019970382CA1721200FD2674 /* Products */;
@@ -342,6 +346,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		01321A242CE4BA8C00FA4A68 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		01660BCA2CAD119400BEDDC6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -353,6 +365,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		01321A252CE4BA8C00FA4A68 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01321A242CE4BA8C00FA4A68 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
 		01660BCB2CAD119400BEDDC6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 01660BCA2CAD119400BEDDC6 /* XCRemoteSwiftPackageReference "SnapKit" */;
