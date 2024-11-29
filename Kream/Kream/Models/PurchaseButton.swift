@@ -12,7 +12,8 @@ import SnapKit
 enum PurchaseButtonType {
     case buy
     case sell
-    case general
+    case fastShip
+    case generalShip
 }
 
 // 커스텀 버튼 클래스
@@ -23,25 +24,34 @@ class PurchaseButton: UIButton {
     init(frame: CGRect, btnType: PurchaseButtonType) {
         super.init(frame: frame)
         
-        // 버튼 스타일 설정
+        // 버튼 스타일 설정 및 subtitle 색상 설정
         switch btnType {
         case .buy:
             self.backgroundColor = UIColor.systemRed
+            priceLabel.font = UIFont.boldSystemFont(ofSize: 13)
+            subLabel.textColor = UIColor(red: 0.639, green: 0.216, blue: 0.137, alpha: 1)
         case .sell:
             self.backgroundColor = UIColor.systemGreen
-        case .general:
+            priceLabel.font = UIFont.boldSystemFont(ofSize: 13)
+            subLabel.textColor = UIColor(red: 0.122, green: 0.467, blue: 0.271, alpha: 1)
+        case .fastShip:
+            self.backgroundColor = UIColor.systemRed
+            priceLabel.font = UIFont.boldSystemFont(ofSize: 14)
+            subLabel.textColor = UIColor(red: 1, green: 0.792, blue: 0.725, alpha: 1)
+        case .generalShip:
             self.backgroundColor = UIColor.black
+            priceLabel.font = UIFont.boldSystemFont(ofSize: 14)
+            subLabel.textColor = UIColor(red: 0.886, green: 0.886, blue: 0.886, alpha: 1)
         }
         self.layer.cornerRadius = 8
         
         // 가격 레이블
-        priceLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        
         priceLabel.textColor = .white
         priceLabel.textAlignment = .center
         
         // 서브 타이틀 레이블
-        subLabel.font = UIFont.systemFont(ofSize: 12)
-        subLabel.textColor = .gray
+        subLabel.font = UIFont.systemFont(ofSize: 10)
         subLabel.textAlignment = .center
         
         // 버튼에 레이블 추가
