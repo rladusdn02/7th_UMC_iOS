@@ -13,11 +13,26 @@ class PurchaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         view.backgroundColor = .white
         view = rootView
         
         setupDelegate()
     }
+    
+    private func setupNavigationBar(){
+        let backButton = UIBarButtonItem(
+            image: UIImage(systemName: "arrow.left"),
+            style: .plain,
+            target: self,
+            action: #selector(handleBackButtonTapped) // 버튼 클릭 시 호출될 메서드
+        )
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationController?.navigationBar.tintColor = .black // 화살표 색상 설정
+    }
+    @objc private func handleBackButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+        }
     
     private func setupDelegate() {
         rootView.jacketsCollectionView.dataSource = self
