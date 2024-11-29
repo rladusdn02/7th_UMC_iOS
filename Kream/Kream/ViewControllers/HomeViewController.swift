@@ -141,3 +141,17 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return 20
     }
 }
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // essentialsCollectionView에서 특정 셀을 클릭한 경우
+        if collectionView == rootView.essentialsCollectionView {
+            let purchaseVC = PurchaseViewController()
+            let navigationController = UINavigationController(rootViewController: purchaseVC)
+            print("purchase로 넘어감")
+            navigationController.modalPresentationStyle = .fullScreen
+            present(navigationController, animated: true)
+        }
+    }
+}

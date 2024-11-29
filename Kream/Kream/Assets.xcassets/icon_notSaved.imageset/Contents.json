@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_notSaved.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
