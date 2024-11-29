@@ -74,13 +74,19 @@ class PurchaseView: UIView {
     
     // 여러 자켓 컬렉션 뷰
     ///PurchaseController에서 접근해야하므로 public
-    public let jacketsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
-        $0.estimatedItemSize = .init(width:53, height:53)
-    }).then {
-        $0.backgroundColor = .clear
-        $0.isScrollEnabled = false
-        $0.register(JacketsCollectionViewCell.self, forCellWithReuseIdentifier: JacketsCollectionViewCell.identifier)
-    }
+    // 여러 자켓 컬렉션 뷰
+    public let jacketsCollectionView: UICollectionView = {
+        // 레이아웃 설정
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 53, height: 53)
+
+        // UICollectionView 생성
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        collectionView.register(JacketsCollectionViewCell.self, forCellWithReuseIdentifier: JacketsCollectionViewCell.identifier)
+        return collectionView
+    }()
     
     // 즉시 구매가 라벨
     private lazy var purchaseTitleLabel: UILabel = {
