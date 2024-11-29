@@ -51,10 +51,9 @@ extension SelectSizeViewController: UICollectionViewDataSource, UICollectionView
             return UICollectionViewCell()
         }
         
-        // 예제 데이터
-        let sizes = ["S", "M", "L", "XL", "XXL"]
-        cell.sizeLabel.text = sizes[indexPath.row]
-        cell.priceLabel.text = "360,000원"
+        let list = SizeDatas.dummy()
+        cell.sizeLabel.text = list[indexPath.row].size
+        cell.priceLabel.text = list[indexPath.row].price
         
         return cell
     }
