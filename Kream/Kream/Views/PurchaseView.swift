@@ -1,56 +1,6 @@
 import UIKit
 import SnapKit
 
-// 버튼 타입 정의
-enum PurchaseButtonType {
-    case buy
-    case sell
-}
-
-// 커스텀 버튼 클래스
-class PurchaseButton: UIButton {
-    let priceLabel = UILabel()
-    let subLabel = UILabel()
-    
-    init(frame: CGRect, btnType: PurchaseButtonType) {
-        super.init(frame: frame)
-        
-        // 버튼 스타일 설정
-        self.backgroundColor = btnType == .buy ? UIColor.systemRed : UIColor.systemGreen
-        self.layer.cornerRadius = 8
-        
-        // 가격 레이블
-        priceLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        priceLabel.textColor = .white
-        priceLabel.textAlignment = .center
-        
-        // 서브 타이틀 레이블
-        subLabel.font = UIFont.systemFont(ofSize: 12)
-        subLabel.textColor = .white
-        subLabel.textAlignment = .center
-        
-        // 버튼에 레이블 추가
-        addSubview(priceLabel)
-        addSubview(subLabel)
-        
-        // 레이블 레이아웃 설정
-        priceLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(8)
-            make.centerX.equalToSuperview()
-        }
-        
-        subLabel.snp.makeConstraints { make in
-            make.top.equalTo(priceLabel.snp.bottom).offset(4)
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-8)
-        }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 // `PurchaseView` 클래스
 class PurchaseView: UIView {
     override init(frame: CGRect) {
@@ -80,7 +30,7 @@ class PurchaseView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 53, height: 53)
-
+        
         // UICollectionView 생성
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
@@ -140,61 +90,57 @@ class PurchaseView: UIView {
         button.configuration = configuration
         return button
     }()
+    // 즉시 구매 버튼
+    public let nowBuyButton: PurchaseButton = PurchaseButton(frame: .zero, btnType: .buy)
+    // 즉시 판매 버튼
+    public let nowSellButton: PurchaseButton = PurchaseButton(frame: .zero, btnType: .sell)
+    // 버튼 텍스트 및 스타일 설정
+    private func setupButtonTexts() {
+        nowBuyButton.priceLabel.text = "345,000"
+        nowBuyButton.subLabel.text = "즉시 구매가"
+        
+        nowSellButton.priceLabel.text = "396,000"
+        nowSellButton.subLabel.text = "즉시 판매가"
+    }
     
     // 하단 버튼 뷰
     private lazy var bottomView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
-
-        // 저장 버튼
-        let saveButton = self.saveButton
+        
+        // 저장 버튼 추가
         view.addSubview(saveButton)
-
+        
         // 버튼 스택뷰 생성
         let buttonStackView = UIStackView()
         buttonStackView.axis = .horizontal
         buttonStackView.spacing = 6
         buttonStackView.distribution = .fillEqually // 버튼 크기 자동 균등 분배
-
-        // 즉시 구매 버튼
-        let nowBuyButton = bottomButtons(type: true, price: "345,000", subTitle: "즉시 구매가")
-        // 즉시 판매 버튼
-        let nowSellButton = bottomButtons(type: false, price: "396,000", subTitle: "즉시 판매가")
-
-        // 버튼을 스택뷰에 추가
+        
+        // 버튼 추가
         buttonStackView.addArrangedSubview(nowBuyButton)
         buttonStackView.addArrangedSubview(nowSellButton)
-
+        setupButtonTexts()
+        
         view.addSubview(buttonStackView)
-
+        
         // 저장 버튼 제약 조건
         saveButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview() // 수직 가운데 정렬
-            $0.left.equalToSuperview().offset(16) // 왼쪽 여백
-            $0.width.height.equalTo(40) // 버튼 크기 명확히 지정 (너비와 높이를 동일하게)
+            $0.centerY.equalToSuperview()
+            $0.left.equalToSuperview().offset(16)
+            $0.width.height.equalTo(40)
         }
-
+        
         // 스택뷰 제약 조건
         buttonStackView.snp.makeConstraints {
-            $0.centerY.equalToSuperview() // 수직 가운데 정렬
-            $0.left.equalTo(saveButton.snp.right).offset(21) // 저장 버튼 오른쪽에 위치
-            $0.right.equalToSuperview().offset(-10) // 오른쪽 여백
-            $0.height.equalTo(50) // 버튼 높이 고정
+            $0.centerY.equalToSuperview()
+            $0.left.equalTo(saveButton.snp.right).offset(21)
+            $0.right.equalToSuperview().offset(-10)
+            $0.height.equalTo(50)
         }
-
+        
         return view
     }()
-    
-    // 버튼 생성 함수
-    private func bottomButtons(type: Bool, price: String, subTitle: String) -> PurchaseButton {
-        let btnType: PurchaseButtonType = type ? .buy : .sell
-        let button = PurchaseButton(frame: .zero, btnType: btnType)
-        
-        button.priceLabel.text = price
-        button.subLabel.text = subTitle
-        
-        return button
-    }
     
     // 컴포넌트 추가
     private func addComponents() {
@@ -242,7 +188,7 @@ class PurchaseView: UIView {
         }
         
         bottomView.snp.makeConstraints {
-            $0.top.equalTo(productKorNameLabel.snp.bottom).offset(50)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
             $0.left.right.equalToSuperview()
             $0.height.equalTo(80)
         }

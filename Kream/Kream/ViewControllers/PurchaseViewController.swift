@@ -1,9 +1,6 @@
 //
 //  PurchaseViewController.swift
 //  Kream
-//
-//  Created by 김연우 on 11/22/24.
-//
 
 import UIKit
 import Then
@@ -14,7 +11,7 @@ class PurchaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        view.backgroundColor = .white
+        setupPurchaseButtonActions()
         view = rootView
         
         setupDelegate()
@@ -30,9 +27,23 @@ class PurchaseViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = backButton
         self.navigationController?.navigationBar.tintColor = .black // 화살표 색상 설정
     }
+    
+    // 구매 버튼 handle
+    private func setupPurchaseButtonActions() {
+        rootView.nowBuyButton.addTarget(self, action: #selector(handlePurchaseButtonTapped), for: .touchUpInside)
+    }
+    
+    //navigationbar button handle
     @objc private func handleBackButtonTapped() {
         self.dismiss(animated: true, completion: nil)
-        }
+    }
+    
+    @objc private func handlePurchaseButtonTapped() {
+        let newVC = SelectSizeViewController()
+        let navigationController = UINavigationController(rootViewController: newVC)
+        navigationController.modalPresentationStyle = .pageSheet
+        present(navigationController, animated: true, completion: nil)
+    }
     
     private func setupDelegate() {
         rootView.jacketsCollectionView.dataSource = self
