@@ -54,6 +54,7 @@ class SelectSizeView: UIView {
         layout.itemSize = CGSize(width: 110, height: 50) // 셀 크기 설정
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
+        collectionView.allowsMultipleSelection = false // 단일 선택 모드 활성화
         collectionView.register(SizeCollectionViewCell.self, forCellWithReuseIdentifier: SizeCollectionViewCell.identifier)
         return collectionView
     }()

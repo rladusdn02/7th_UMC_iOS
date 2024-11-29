@@ -55,6 +55,22 @@ extension SelectSizeViewController: UICollectionViewDataSource, UICollectionView
         cell.sizeLabel.text = list[indexPath.row].size
         cell.priceLabel.text = list[indexPath.row].price
         
+        // 초기 상태: 선택 해제
+        cell.setClickAction(isSelected: false)
+        
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? SizeCollectionViewCell else { return }
+            
+            // 선택된 셀 강조
+            cell.setClickAction(isSelected: true)
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? SizeCollectionViewCell else { return }
+            
+            // 선택 해제된 셀 원래 상태로
+            cell.setClickAction(isSelected: false)
+        }
 }
