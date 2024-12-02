@@ -9,9 +9,13 @@ final class APIClient {
     static let shared = APIClient()
     
     private let session: Session
-    
+    private let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String
     private init() {
-        let interceptor = AuthorizationInterceptor(kakaoKey: "4cf599fecbed92fa728a42b47dfaef95") // 본인의 API key
+        guard let apiKey = apiKey else {
+                    fatalError("API_KEY is missing in the Info.plist")
+                }
+        print(apiKey)
+        let interceptor = AuthorizationInterceptor(kakaoKey: apiKey) // 본인의 API key
         session = Session(interceptor: interceptor)
     }
     

@@ -10,10 +10,12 @@
 		013219932CE47C7B00FA4A68 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 013219922CE47C7B00FA4A68 /* Then */; };
 		01660B912CAA86B900BEDDC6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 01660B902CAA86B900BEDDC6 /* SnapKit */; };
 		01C7334A2CFD7E270000E95D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 01C733492CFD7E270000E95D /* Alamofire */; };
+		01C733F62CFDAEAD0000E95D /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 01C733F52CFDAEAD0000E95D /* Secrets.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01660B6E2CAA79E300BEDDC6 /* UMC-iOS-workbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMC-iOS-workbook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01C733F52CFDAEAD0000E95D /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -54,6 +56,7 @@
 		01660B652CAA79E300BEDDC6 = {
 			isa = PBXGroup;
 			children = (
+				01C733F52CFDAEAD0000E95D /* Secrets.xcconfig */,
 				01660B702CAA79E300BEDDC6 /* UMC-iOS-workbook */,
 				01660B6F2CAA79E300BEDDC6 /* Products */,
 			);
@@ -101,7 +104,7 @@
 		01660B662CAA79E300BEDDC6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C733F62CFDAEAD0000E95D /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +161,7 @@
 /* Begin XCBuildConfiguration section */
 		01660B822CAA79E500BEDDC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01C733F52CFDAEAD0000E95D /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -209,6 +214,7 @@
 		};
 		01660B842CAA79E500BEDDC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01C733F52CFDAEAD0000E95D /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -336,7 +342,7 @@
 				01660B852CAA79E500BEDDC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		01660B812CAA79E500BEDDC6 /* Build configuration list for PBXNativeTarget "UMC-iOS-workbook" */ = {
 			isa = XCConfigurationList;
@@ -345,7 +351,7 @@
 				01660B832CAA79E500BEDDC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
