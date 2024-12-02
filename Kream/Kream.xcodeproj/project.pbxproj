@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01321A262CE4BA8C00FA4A68 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 01321A252CE4BA8C00FA4A68 /* Then */; };
 		01660BCC2CAD119400BEDDC6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 01660BCB2CAD119400BEDDC6 /* SnapKit */; };
+		01C733E42CFD87210000E95D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 01C733E32CFD87210000E95D /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C733E42CFD87210000E95D /* Alamofire in Frameworks */,
 				01660BCC2CAD119400BEDDC6 /* SnapKit in Frameworks */,
 				01321A262CE4BA8C00FA4A68 /* Then in Frameworks */,
 			);
@@ -87,6 +89,7 @@
 			packageProductDependencies = (
 				01660BCB2CAD119400BEDDC6 /* SnapKit */,
 				01321A252CE4BA8C00FA4A68 /* Then */,
+				01C733E32CFD87210000E95D /* Alamofire */,
 			);
 			productName = Kream;
 			productReference = 019970372CA1721200FD2674 /* Kream.app */;
@@ -119,6 +122,7 @@
 			packageReferences = (
 				01660BCA2CAD119400BEDDC6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				01321A242CE4BA8C00FA4A68 /* XCRemoteSwiftPackageReference "Then" */,
+				01C733E22CFD87210000E95D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 019970382CA1721200FD2674 /* Products */;
@@ -362,6 +366,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		01C733E22CFD87210000E95D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -374,6 +386,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 01660BCA2CAD119400BEDDC6 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		01C733E32CFD87210000E95D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01C733E22CFD87210000E95D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
