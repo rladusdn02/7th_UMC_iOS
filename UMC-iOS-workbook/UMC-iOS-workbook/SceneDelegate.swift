@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = RainbowViewController()
+        self.window?.rootViewController = Week7ViewController()
         //FIXME: -  실행할 뷰 컨트롤러 파일의 이름을 작성
         self.window?.makeKeyAndVisible()
     }

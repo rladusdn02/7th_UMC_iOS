@@ -18,7 +18,7 @@
 					<key>StartingLineNumber</key>
 					<string>19</string>
 					<key>Timestamp</key>
-					<string>753275789.1628031</string>
+					<string>754809594.55152</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -38,7 +38,7 @@
 </string>
 				<key>leading</key>
 				<string>        self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = RainbowViewController()
+        self.window?.rootViewController = Week7ViewController()
 </string>
 				<key>trailing</key>
 				<string>        self.window?.makeKeyAndVisible()
