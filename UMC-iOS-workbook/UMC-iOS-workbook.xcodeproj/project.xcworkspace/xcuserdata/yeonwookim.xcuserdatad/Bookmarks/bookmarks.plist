@@ -38,7 +38,7 @@
 </string>
 				<key>leading</key>
 				<string>        self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = Week7ViewController()
+        self.window?.rootViewController = UserViewController()
 </string>
 				<key>trailing</key>
 				<string>        self.window?.makeKeyAndVisible()

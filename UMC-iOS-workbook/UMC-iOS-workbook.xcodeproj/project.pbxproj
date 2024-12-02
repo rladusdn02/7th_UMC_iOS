@@ -11,6 +11,10 @@
 		01660B912CAA86B900BEDDC6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 01660B902CAA86B900BEDDC6 /* SnapKit */; };
 		01C7334A2CFD7E270000E95D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 01C733492CFD7E270000E95D /* Alamofire */; };
 		01C733F62CFDAEAD0000E95D /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 01C733F52CFDAEAD0000E95D /* Secrets.xcconfig */; };
+		01C7344D2CFE21D40000E95D /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 01C7344C2CFE21D40000E95D /* CombineMoya */; };
+		01C7344F2CFE21D40000E95D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 01C7344E2CFE21D40000E95D /* Moya */; };
+		01C734512CFE21D40000E95D /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 01C734502CFE21D40000E95D /* ReactiveMoya */; };
+		01C734532CFE21D40000E95D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 01C734522CFE21D40000E95D /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +50,11 @@
 			files = (
 				01C7334A2CFD7E270000E95D /* Alamofire in Frameworks */,
 				01660B912CAA86B900BEDDC6 /* SnapKit in Frameworks */,
+				01C7344D2CFE21D40000E95D /* CombineMoya in Frameworks */,
+				01C7344F2CFE21D40000E95D /* Moya in Frameworks */,
+				01C734532CFE21D40000E95D /* RxMoya in Frameworks */,
 				013219932CE47C7B00FA4A68 /* Then in Frameworks */,
+				01C734512CFE21D40000E95D /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +101,10 @@
 				01660B902CAA86B900BEDDC6 /* SnapKit */,
 				013219922CE47C7B00FA4A68 /* Then */,
 				01C733492CFD7E270000E95D /* Alamofire */,
+				01C7344C2CFE21D40000E95D /* CombineMoya */,
+				01C7344E2CFE21D40000E95D /* Moya */,
+				01C734502CFE21D40000E95D /* ReactiveMoya */,
+				01C734522CFE21D40000E95D /* RxMoya */,
 			);
 			productName = "UMC-iOS-workbook";
 			productReference = 01660B6E2CAA79E300BEDDC6 /* UMC-iOS-workbook.app */;
@@ -126,6 +138,7 @@
 				01660B8F2CAA86B900BEDDC6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				013219912CE47C7B00FA4A68 /* XCRemoteSwiftPackageReference "Then" */,
 				01C733482CFD7E270000E95D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				01C7344B2CFE21D40000E95D /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 01660B6F2CAA79E300BEDDC6 /* Products */;
@@ -380,6 +393,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		01C7344B2CFE21D40000E95D /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -397,6 +418,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 01C733482CFD7E270000E95D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		01C7344C2CFE21D40000E95D /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01C7344B2CFE21D40000E95D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		01C7344E2CFE21D40000E95D /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01C7344B2CFE21D40000E95D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		01C734502CFE21D40000E95D /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01C7344B2CFE21D40000E95D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		01C734522CFE21D40000E95D /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01C7344B2CFE21D40000E95D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
