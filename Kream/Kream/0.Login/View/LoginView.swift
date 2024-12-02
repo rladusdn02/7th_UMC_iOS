@@ -122,12 +122,53 @@ class LoginView: UIView {
         return btn
     }()
     
+    public lazy var kakaologinButton: UIButton = {
+        let btn = UIButton()
+        
+        // 배경색 및 테두리 설정
+        btn.backgroundColor = .white
+        btn.layer.cornerRadius = 10
+        btn.layer.borderWidth = 1
+        btn.layer.borderColor = UIColor.lightGray.cgColor
+        
+        // 아이콘 이미지 추가
+        let iconImageView = UIImageView(image: UIImage(named: "kakaoLogin")) // "kakaoLogin" 이미지를 사용
+        iconImageView.contentMode = .scaleAspectFit
+        
+        // 버튼 타이틀 설정
+        let titleLabel = UILabel()
+        titleLabel.text = "카카오로 로그인"
+        titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
+        
+        // 아이콘 추가
+        btn.addSubview(iconImageView)
+        btn.addSubview(titleLabel)
+        
+        // 아이콘 제약 조건 설정
+        iconImageView.snp.makeConstraints {
+            $0.centerY.equalToSuperview() // 버튼의 수직 중앙 정렬
+            $0.leading.equalToSuperview().offset(12) // 버튼의 좌측에 배치
+            $0.width.height.equalTo(16) // 아이콘 크기 설정
+        }
+        
+        // 타이틀 라벨 제약 조건 설정
+        titleLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview() // 버튼의 수직 중앙 정렬
+            $0.centerX.equalToSuperview() // 버튼의 수평 중앙 정렬
+        }
+        
+        return btn
+    }()
+    
     // 컴포넌트 추가
     private func addComponents() {
         self.addSubview(logoImageView)
         self.addSubview(emailView)
         self.addSubview(pwdView)
         self.addSubview(LoginButton)
+        self.addSubview(kakaologinButton)
     }
     
     private func setupConstraints() {
@@ -150,6 +191,11 @@ class LoginView: UIView {
             $0.top.equalTo(pwdView.snp.bottom).offset(17)
             $0.left.right.equalToSuperview().inset(45)
             $0.height.equalTo(38)
+        }
+        kakaologinButton.snp.makeConstraints{
+            $0.top.equalTo(LoginButton.snp.bottom).offset(87)
+            $0.left.right.equalToSuperview().inset(45)
+            $0.height.equalTo(40)
         }
     }
 }
