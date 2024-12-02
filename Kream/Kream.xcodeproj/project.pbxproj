@@ -11,10 +11,12 @@
 		01660BCC2CAD119400BEDDC6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 01660BCB2CAD119400BEDDC6 /* SnapKit */; };
 		01C733E42CFD87210000E95D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 01C733E32CFD87210000E95D /* Alamofire */; };
 		01C733EF2CFDA2720000E95D /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 01C733EE2CFDA2720000E95D /* KakaoSDK */; };
+		01C733F22CFDA5E90000E95D /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 01C733F12CFDA5E90000E95D /* Secrets.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		019970372CA1721200FD2674 /* Kream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kream.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01C733F12CFDA5E90000E95D /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -58,6 +60,7 @@
 			children = (
 				019970392CA1721200FD2674 /* Kream */,
 				019970382CA1721200FD2674 /* Products */,
+				01C733F12CFDA5E90000E95D /* Secrets.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C733F22CFDA5E90000E95D /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +165,7 @@
 /* Begin XCBuildConfiguration section */
 		0199704B2CA1721500FD2674 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01C733F12CFDA5E90000E95D /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -187,6 +192,7 @@
 		};
 		0199704C2CA1721500FD2674 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01C733F12CFDA5E90000E95D /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -340,7 +346,7 @@
 				0199704E2CA1721500FD2674 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		0199704A2CA1721500FD2674 /* Build configuration list for PBXNativeTarget "Kream" */ = {
 			isa = XCConfigurationList;
@@ -349,7 +355,7 @@
 				0199704C2CA1721500FD2674 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
